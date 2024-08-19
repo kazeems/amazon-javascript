@@ -69,7 +69,6 @@ function updateCartQuantity() {
     cartQuantity += cartItem.quantity;
   });
 
-  console.log(cartQuantity);
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
