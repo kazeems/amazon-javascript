@@ -3,12 +3,7 @@ import { getProduct, products } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from ' https://unpkg.com/dayjs@1.11.10/esm/index.js'; //ESM version of the library
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
-
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-// console.log(deliveryDate.format('dddd, MMMM D'));
-
-// function renderOrderSummary() {
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
 
@@ -129,6 +124,8 @@ export function renderOrderSummary() {
 
         container.remove();
 
+        renderPaymentSummary();
+
       });
     });
 
@@ -143,6 +140,8 @@ export function renderOrderSummary() {
         );
 
         renderOrderSummary();
+
+        renderPaymentSummary();
       });
     });
 
